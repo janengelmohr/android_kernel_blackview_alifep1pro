@@ -384,19 +384,6 @@ KBUILD_CFLAGS_MODULE  := -DMODULE
 KBUILD_LDFLAGS_MODULE := -T $(srctree)/scripts/module-common.lds
 
 
-#Begin For RGK--------------------------------------------------------------------------------
-#lisong 2015-6-17 [BUGID:XWLLE-597][customer requirement:custom cpu info]start
-ifeq ($(RGK_CUSTOM_CPU_INFO),yes)
-  KBUILD_CFLAGS += -DRGK_CUSTOM_CPU_INFO
-endif
-
-ifeq ($(CUSTOM_KERNEL_MHALL),yes)
-  KBUILD_CFLAGS += -DCUSTOM_KERNEL_MHALL
-endif
-#lisong 2015-6-17 [BUGID:XWLLE-597][customer requirement:custom cpu info]end
-
-#End For RGK----------------------------------------------------------------------------------
-
 # Read KERNELRELEASE from include/config/kernel.release (if it exists)
 KERNELRELEASE = $(shell cat include/config/kernel.release 2> /dev/null)
 KERNELVERSION = $(VERSION)$(if $(PATCHLEVEL),.$(PATCHLEVEL)$(if $(SUBLEVEL),.$(SUBLEVEL)))$(EXTRAVERSION)

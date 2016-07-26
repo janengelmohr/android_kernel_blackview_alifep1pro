@@ -442,33 +442,11 @@ static ssize_t show_##file_name				\
 }
 
 show_one(cpuinfo_min_freq, cpuinfo.min_freq);
-//lisong 2015-6-17 [BUGID:XWLLE-597][customer requirement:custom cpu info]start    
-#if defined(RGK_CUSTOM_CPU_INFO)
-static ssize_t show_cpuinfo_max_freq(struct cpufreq_policy *policy, char *buf)
-{
-    return sprintf(buf, "%u\n", 1300000);
-}
-#else
 show_one(cpuinfo_max_freq, cpuinfo.max_freq);
-#endif
-//lisong 2015-6-17 [BUGID:XWLLE-597][customer requirement:custom cpu info]end
-
 show_one(cpuinfo_transition_latency, cpuinfo.transition_latency);
 show_one(scaling_min_freq, min);
 show_one(scaling_max_freq, max);
-//lisong 2015-6-17 [BUGID:XWLLE-597][customer requirement:custom cpu info]start    
-#if defined(RGK_CUSTOM_CPU_INFO)
-static ssize_t show_scaling_cur_freq(struct cpufreq_policy *policy, char *buf)
-{
-    if(policy->cur == 988000)
-        return sprintf(buf, "%u\n", 1300000);
-    else
-        return sprintf(buf, "%u\n", policy->cur);
-}
-#else
 show_one(scaling_cur_freq, cur);
-#endif
-//lisong 2015-6-17 [BUGID:XWLLE-597][customer requirement:custom cpu info]end
 
 static int __cpufreq_set_policy(struct cpufreq_policy *data,
 				struct cpufreq_policy *policy);
