@@ -274,11 +274,16 @@ extern LCM_DRIVER rm68200_hd_auo5p5_hly_glt_s888_lcm_drv;
 extern LCM_DRIVER hx8394f_hd_auo5p5_blj_trx_x5602_lcm_drv;
 extern LCM_DRIVER nt35521_hd_boe5p5_xld_jieke_lcm_drv;
 extern LCM_DRIVER hx8394f_hd_boe5p0_blj_trx_x5602_lcm_drv;
+extern LCM_DRIVER ili9881c_auo_hd720_5p5_chuanma_x5602_jk;
 //rgk lcm drvier end-----------------------------------
 extern LCM_DRIVER hx8379c_dsi_vdo_azet_boe_wvga_lcm_drv;
 
 LCM_DRIVER* lcm_driver_list[] =
 {
+#if defined(ILI9881C_AUO_HD720_5P5_CHUANMA_X5602_JK)
+	&ili9881c_auo_hd720_5p5_chuanma_x5602_jk,
+#endif
+
 #if defined(HX8379C_DSI_VDO_AZET_BOE_WVGA)
 		&hx8379c_dsi_vdo_azet_boe_wvga_lcm_drv,
 #endif
