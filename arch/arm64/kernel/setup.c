@@ -490,14 +490,6 @@ static int c_show(struct seq_file *m, void *v)
 	seq_printf(m, "CPU revision\t: %d\n", read_cpuid_id() & 15);
 
 	seq_puts(m, "\n");
-    
-//lisong 2015-6-17 [BUGID:XWLLE-597][customer requirement:custom cpu info]start    
-#if defined(RGK_CUSTOM_CPU_INFO)
-    seq_printf(m, "Hardware\t: %s\n", "MT6735");
-#else
-	seq_printf(m, "Hardware\t: %s\n", machine_name);
-#endif
-//lisong 2015-6-17 [BUGID:XWLLE-597][customer requirement:custom cpu info]end
 
 	return 0;
 }
