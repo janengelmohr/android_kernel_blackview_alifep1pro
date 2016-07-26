@@ -768,8 +768,8 @@ drivers-y	:= $(patsubst %/, %/built-in.o, $(drivers-y))
 net-y		:= $(patsubst %/, %/built-in.o, $(net-y))
 libs-y1		:= $(patsubst %/, %/lib.a, $(libs-y))
 libs-y2		:= $(patsubst %/, %/built-in.o, $(libs-y))
-libs-y1		+= $(srctree)/drivers/input/touchscreen/mediatek/FT6336_D5180/ft_rawdata.a
-libs-y1		+= $(srctree)/drivers/input/touchscreen/mediatek/FT6336_D5180/ft_gesture_lib.a
+#libs-y1		+= $(srctree)/drivers/input/touchscreen/mediatek/FT6336_D5180/ft_rawdata.a
+#libs-y1		+= $(srctree)/drivers/input/touchscreen/mediatek/FT6336_D5180/ft_gesture_lib.a
 libs-y		:= $(libs-y1) $(libs-y2)
 
 
